@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Webstart Chat</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+	<link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+	<section class="section">
+		<div class="container">
+			<div id="chat">
+				<div class="columns">
+		  			<div class="column is-6 is-offset-3">
+		  				<h1 class="has-text-centered title">Webstart chat</h1>
+
+		  				<article class="message is-link" v-for="message in messages">
+							<div class="message-body">{{ message }}</div>
+						</article>
+						<div class="chat__box">
+							<input type="text" class="input is-info has-fixed-size chat__input"
+							placeholder="Entrez votre message" v-model="message" v-on:keyup.enter="send">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+	<script src="/static/js/app.js"></script>
+
+</body>
+</html>
